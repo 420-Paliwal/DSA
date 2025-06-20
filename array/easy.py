@@ -38,3 +38,17 @@ class Solution:
                 dic[i] += 1
         return len(dic)
     
+
+
+# check if an array is sorted
+
+
+# rotate an array by one position to the right
+class Solution:
+    def rotateArrayByOne(self, arr):
+        n = len(arr)
+        temp = arr[0]
+        for i in range(1,n):
+            arr[i-1] = arr[i]
+        arr[n-1] = temp
+        return arr
