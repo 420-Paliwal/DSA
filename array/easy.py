@@ -11,6 +11,20 @@ class Solution:
             if i > maxx:
                 maxx = i
         return maxx
+    
+#  second largest element in an array   
+class Solution:
+    def secondLargestElement(self, arr):
+        if not arr or len(arr) < 2:
+            return -1 
+        largest = second = -1
+        for i in arr:
+            if i > largest: 
+                second = largest
+                largest = i 
+            elif i > second and i!= largest:
+                second = i
+        return second
 
 
 # remove duplicate elements from an array
