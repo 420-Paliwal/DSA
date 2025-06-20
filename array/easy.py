@@ -27,19 +27,6 @@ class Solution:
         return second
 
 
-# remove duplicate elements from an array
-class Solution:
-    def removeDuplicates(self, arr):
-        dic = {}
-        for i in arr:
-            if i not in dic:
-                dic[i] = 1
-            else:
-                dic[i] += 1
-        return len(dic)
-    
-
-
 # check if an array is sorted
 class Solution:
     def isSorted(self, arr):
@@ -50,6 +37,17 @@ class Solution:
                 flag = False
                 break
         return flag
+
+# remove duplicate elements from an array
+class Solution:
+    def removeDuplicates(self, arr):
+        dic = {}
+        for i in arr:
+            if i not in dic:
+                dic[i] = 1
+            else:
+                dic[i] += 1
+        return len(dic)
 
 # rotate an array by one position to the right
 class Solution:
