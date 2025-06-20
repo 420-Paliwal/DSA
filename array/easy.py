@@ -41,7 +41,15 @@ class Solution:
 
 
 # check if an array is sorted
-
+class Solution:
+    def isSorted(self, arr):
+        flag = True
+        n = len(arr)
+        for i in range(1,n):
+            if arr[i-1] > arr[i]:
+                flag = False
+                break
+        return flag
 
 # rotate an array by one position to the right
 class Solution:
