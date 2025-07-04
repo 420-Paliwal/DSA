@@ -58,3 +58,17 @@ class Solution:
             arr[i-1] = arr[i]
         arr[n-1] = temp
         return arr
+    
+# rotate an array by k positions to the right
+class Solution:
+    def rotateArray(self, arr, k):
+        n = len(arr)
+        k = k%n
+        temp = []
+        for i in range(k):
+            temp.append(arr[i])
+        temp1 = []                                                                    
+        for i in range(k,n):
+            temp1.append(arr[i])                                                        
+        arr = [*temp1, *temp]
+        return arr
