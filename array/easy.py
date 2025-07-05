@@ -72,3 +72,4 @@ class Solution:
             temp1.append(arr[i])                                                        
         arr = [*temp1, *temp]
         return arr
+    
