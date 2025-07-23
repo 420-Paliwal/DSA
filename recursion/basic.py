@@ -15,4 +15,11 @@ class Solution:
           return
         print(n)
         self.printNumbers(n-1)
-
+        
+# This is a simple recursive function to calculate the sum of first n natural numbers.
+class Solution:
+    def NnumbersSum(self, n):
+        #your code goes here
+        if (n <= 0):
+            return 0
+        return n + self.NnumbersSum(n-1)
