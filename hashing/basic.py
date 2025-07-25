@@ -15,3 +15,21 @@ def char_str(s, x):
         temp[ord(i) - 97] += 1
     ans = temp[ord(x) - 97]
     return ans
+
+
+# This code finds the most frequent element in an array using a dictionary to count occurrences.
+class Solution:
+    def mostFrequentElement(self, arr):
+        mapp = {}
+        for i in arr:
+            if i in mapp:
+                mapp[i] += 1
+            else:
+                mapp[i] = 1
+        max = 0
+        val = 0
+        for i in mapp:
+            if mapp[i] > max:
+                max = mapp[i]
+                val = i
+        return val
