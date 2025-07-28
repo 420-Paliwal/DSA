@@ -13,6 +13,7 @@ class Solution:
 # Bubble Sort Implementation
 class Solution:
     def bubbleSort(self, arr):
+        n = len(arr)
         swap = False
         for i in range(n):
             for j in range(n-i-1):
