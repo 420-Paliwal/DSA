@@ -1,0 +1,13 @@
+# Selection Sort Implementation
+class Solution:
+    def selectionSort(self, arr):
+        n = len(arr)
+        for i in range(n):
+            minn = i
+            for j in range(i+1, n):
+                if arr[minn] > arr[j]:
+                    minn = j
+            arr[minn], arr[i] = arr[i], arr[minn]
+        return arr
+    
+    
