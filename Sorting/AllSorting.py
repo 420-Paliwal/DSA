@@ -11,3 +11,14 @@ class Solution:
         return arr
     
 # Bubble Sort Implementation
+class Solution:
+    def bubbleSort(self, arr):
+        swap = False
+        for i in range(n):
+            for j in range(n-i-1):
+                if arr[j] > arr[j+1]:
+                    arr[j], arr[j+1] = arr[j+1], arr[j]
+                    swap = True
+            if swap == False:
+                return arr
+        return arr
