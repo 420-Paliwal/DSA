@@ -73,3 +73,30 @@ class Solution:
         
         merge(arr, low, high)
         return arr
+
+#quick sort implementation
+class Solution:
+    def quickSort(self, arr):
+        n = len(arr)
+        low = 0
+        high = n-1
+        def partition(arr, low, high):
+            pivot = arr[low]
+            i = low
+            j = high
+            while( i < j):
+                while(arr[i] <= pivot and i <= high - 1):
+                    i += 1
+                while(arr[j] > pivot and j >= low + 1):
+                    j -= 1
+                if (i<j):
+                    arr[i], arr[j] = arr[j], arr[i]
+            arr[low], arr[j] = arr[j], arr[low]
+            return j
+        def quick(arr, low, high):
+            if low < high: 
+                pIndex = partition(arr, low, high)
+                quick(arr, low, pIndex-1)
+                quick(arr, pIndex+1, high)
+        quick(arr, low, high)
+        return arr
