@@ -193,4 +193,14 @@ class Solution:
         for i in nums2:
             if i not in dic:
                 dic.add(i)
-        return list(dic)       
+        return list(dic)      
+
+# Find the missing number in an array of n elements
+class Solution:
+    def missingNumber(self, arr):
+        n = len(arr)
+        summ = (n*(n+1))//2
+        arr_summ = 0
+        for i in arr:
+            arr_summ += i 
+        return summ - arr_summ 
