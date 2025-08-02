@@ -100,3 +100,13 @@ class Solution:
                 quick(arr, pIndex+1, high)
         quick(arr, low, high)
         return arr
+
+#largest element in an array
+class Solution:
+    def largestElement(self, arr):
+        largest = arr[0]
+        n = len(arr)
+        for i in range(1,n):
+            if arr[i] > largest:
+                largest = arr[i]
+        return largest
