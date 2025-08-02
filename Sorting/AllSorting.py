@@ -204,3 +204,19 @@ class Solution:
         for i in arr:
             arr_summ += i 
         return summ - arr_summ 
+    
+# Find the maximum number of consecutive 1's in a binary array    
+class Solution:
+    def findMaxConsecutiveOnes(self, arr):
+        maxx = 0
+        i = 0
+        n = len(arr)
+        for j in range(n):
+            if arr[j] == 1:
+                i += 1
+                if i > maxx:
+                    maxx = i
+            else:
+                i = 0
+        return maxx
+            
