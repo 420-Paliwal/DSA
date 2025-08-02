@@ -146,3 +146,17 @@ class Solution:
             arr[i-1] = arr[i]
         arr[n-1] = low
         return arr
+
+# Rotate an array by k positions
+class Solution:
+    def rotateArray(self, arr, k):
+        temp = []
+        n = len(arr)
+        k = k%n
+        for i in range(k):
+            temp.append(arr[i])
+        for i in range(k,n):
+            arr[i-k] = arr[i]
+        for i in range(k):
+            arr[n-k+i] = temp[i]
+        return arr
