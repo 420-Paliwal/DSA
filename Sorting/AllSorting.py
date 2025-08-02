@@ -110,3 +110,17 @@ class Solution:
             if arr[i] > largest:
                 largest = arr[i]
         return largest
+    
+#smallest element in an array
+class Solution:
+    def secondLargestElement(self, arr):
+        largest = -1
+        second_largest = -1
+        n = len(arr)
+        for i in range(n):
+            if arr[i] > largest:
+                second_largest = largest
+                largest = arr[i]
+            if arr[i] < largest and arr[i] > second_largest:
+                second_largest = arr[i]
+        return second_largest
