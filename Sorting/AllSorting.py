@@ -124,3 +124,15 @@ class Solution:
             if arr[i] < largest and arr[i] > second_largest:
                 second_largest = arr[i]
         return second_largest
+
+# check array is sorted or not
+class Solution:
+    def isSorted(self, arr):
+        #your code goes here
+        isssorted = True
+        n = len(arr)
+        for i in range(1,n):
+            if arr[i] < arr[i-1]:
+                isssorted = False
+                return isssorted
+        return isssorted
