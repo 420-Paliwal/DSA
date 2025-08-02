@@ -185,3 +185,12 @@ class Solution:
                 ans = i
                 return ans
         return ans 
+
+# Union of two arrays
+class Solution:
+    def unionArray(self, nums1, nums2):
+        dic = set(nums1)
+        for i in nums2:
+            if i not in dic:
+                dic.add(i)
+        return list(dic)       
