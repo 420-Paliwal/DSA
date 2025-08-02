@@ -136,3 +136,13 @@ class Solution:
                 isssorted = False
                 return isssorted
         return isssorted
+
+# Rotate an array by one position
+class Solution:
+    def rotateArrayByOne(self, arr):
+        n = len(arr)
+        low = arr[0]
+        for i in range(1,n):
+            arr[i-1] = arr[i]
+        arr[n-1] = low
+        return arr
