@@ -160,3 +160,17 @@ class Solution:
         for i in range(k):
             arr[n-k+i] = temp[i]
         return arr
+
+# Move all zeroes to the end of the array
+class Solution:
+    def moveZeroes(self, arr):
+        n = len(arr)
+        temp1 = []
+        for i in arr:
+            if i != 0:
+                temp1.append(i)
+        for i in range(len(temp1)):
+            arr[i] = temp1[i]
+        for i in range(len(temp1), n):
+            arr[i] = 0
+        return arr
