@@ -174,3 +174,14 @@ class Solution:
         for i in range(len(temp1), n):
             arr[i] = 0
         return arr
+    
+ # Linear Search ImplementationS   
+class Solution:
+    def linearSearch(self, arr, x):
+        ans = -1
+        n = len(arr)
+        for i in range(n):
+            if arr[i] == x:
+                ans = i
+                return ans
+        return ans 
