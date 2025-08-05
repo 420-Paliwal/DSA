@@ -233,3 +233,21 @@ class Solution:
         for i in dic:
             if dic[i] == 1:
                 return i 
+
+#find the length of the longest subarray with sum equal to k
+class Solution:
+    def longestSubarray(self, arr, k):
+        n = len(arr)
+        i = 0
+        maxlen = 0
+        summ = 0
+        for j in range(n):
+            summ += arr[j]
+            while ( summ > k):
+                summ -= arr[i]
+                i += 1
+            
+            if (summ == k and j-i+1 > maxlen):
+                maxlen = j-i+1
+            
+        return maxlen
