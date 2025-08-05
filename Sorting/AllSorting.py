@@ -251,3 +251,16 @@ class Solution:
                 maxlen = j-i+1
             
         return maxlen
+
+# Find two indices such that the sum of the elements at those indices equals k
+class Solution:
+    def twoSum(self, arr, k):
+        dic = {}
+        n = len(arr)
+        for i in range(n):
+            elem = k - arr[i]
+            if elem in dic:
+                return [dic[elem], i]
+            else:
+                dic[elem] = i
+        return [-1,-1]
