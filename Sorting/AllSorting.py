@@ -264,3 +264,28 @@ class Solution:
             else:
                 dic[elem] = i
         return [-1,-1]
+
+# Sort Colors (Dutch National Flag Problem)
+class Solution:
+    def sortColors(self, nums):
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        count0 = 0
+        count1 = 0
+        count2 = 0
+        n = len(nums)
+        for i in (nums):
+            if i == 0:
+                count0 += 1
+            elif i == 1:
+                count1 += 1
+            elif i == 2:
+                count2 += 2
+        
+        for i in range(0, count0):
+            nums[i] = 0
+        for i in range(count0, count0+count1):
+            nums[i] = 1
+        for i in range(count0 + count1, n):
+            nums[i] = 2
