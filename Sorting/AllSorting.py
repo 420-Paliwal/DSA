@@ -289,3 +289,16 @@ class Solution:
             nums[i] = 1
         for i in range(count0 + count1, n):
             nums[i] = 2
+
+# Find the majority element in an array (element that appears more than n/2 times)
+class Solution:
+    def majorityElement(self, nums):
+        dic = {}
+        n = len(nums)
+        for i in range(n):
+            if nums[i] in dic:
+                dic[nums[i]] += 1
+            else:
+                dic[nums[i]] = 1 
+            if dic[nums[i]] > n//2:
+                return nums[i]   
