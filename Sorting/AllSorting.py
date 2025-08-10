@@ -323,3 +323,27 @@ class Solution:
         if ans > n//2:
             return elem 
         return -1
+
+def max_sub(arr):
+    n = len(arr)
+    maxx = arr[0]
+    summ = 0
+    j = 0
+    sub_arr = [0,0]
+    for i in range(n):
+        if summ == 0:
+            j = i
+        summ += arr[i]
+        if summ > maxx:
+            sub_arr[0] = j
+            sub_arr[1] = i
+            maxx = summ
+        if summ < 0:
+            summ = 0
+    for i in range(sub_arr[0], sub_arr[1]+1):
+        print(arr[i], end=" ")
+    return maxx
+
+arr = [-2,1,-3,4,-1,2,1,-5,4]
+ans = max_sub(arr)
+print("\nMaximum subarray sum is:", ans)
