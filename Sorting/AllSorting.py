@@ -302,3 +302,24 @@ class Solution:
                 dic[nums[i]] = 1 
             if dic[nums[i]] > n//2:
                 return nums[i]   
+# Second approach in more optimised way using Boyer-Moore Voting Algorithm
+class Solution:
+    def majorityElement(self, arr) -> int:
+        n = len(arr)
+        elem = None
+        count = 0
+        for i in arr:
+            if count == 0:
+                count = 1
+                elem = i
+            elif i == elem:
+                count += 1
+            else:
+                count -= 1
+        ans = 0
+        for i in arr:
+            if i == elem:
+                ans += 1
+        if ans > n//2:
+            return elem 
+        return -1
