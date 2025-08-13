@@ -324,6 +324,7 @@ class Solution:
             return elem 
         return -1
 
+# Find the maximum subarray sum using Kadane's Algorithm
 def max_sub(arr):
     n = len(arr)
     maxx = arr[0]
@@ -344,6 +345,18 @@ def max_sub(arr):
         print(arr[i], end=" ")
     return maxx
 
-arr = [-2,1,-3,4,-1,2,1,-5,4]
-ans = max_sub(arr)
-print("\nMaximum subarray sum is:", ans)
+# Rearrange an array such that positive and negative numbers are in alternate positions
+class Solution:
+    def rearrangeArray(self, arr):
+        i = 0
+        j = 1
+        n = len(arr)
+        temp = [0 for _ in range(n)]
+        for k in range(n):
+            if arr[k] > 0:
+                temp[i] = arr[k]
+                i += 2
+            if arr[k] < 0:
+                temp[j] = arr[k]
+                j += 2
+        return temp
