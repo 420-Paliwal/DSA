@@ -360,3 +360,21 @@ class Solution:
                 temp[j] = arr[k]
                 j += 2
         return temp
+    
+# Find the length of the longest consecutive sequence in an unsorted array
+class Solution:
+    def longestConsecutive(self, arr) -> int:
+        arr = set(arr)
+        n = len(arr)
+        if n < 1:
+            return n
+        large = 0
+        for x in arr:
+            if (x-1 not in arr):
+                count = 1
+                while(x+1 in arr):
+                    x += 1
+                    count += 1
+                if count > large:
+                    large = count
+        return large
