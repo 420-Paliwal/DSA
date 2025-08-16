@@ -378,3 +378,26 @@ class Solution:
                 if count > large:
                     large = count
         return large
+    
+# Set Matrix Zeroes
+class Solution:
+    def setZeroes(self, arr) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        rows = len(arr)
+        cols = len(arr[0])
+        for i in range(rows):
+            for j in range(cols):
+                if arr[i][j] == 0:
+                    for k in range(cols):
+                        if arr[i][k] != 0:
+                            arr[i][k] = None
+                    for l in range(rows):
+                        if arr[l][j] != 0:
+                            arr[l][j] = None
+        for i in range(rows):
+            for j in range(cols):
+                if arr[i][j] == None:
+                    arr[i][j] = 0
+        return arr
