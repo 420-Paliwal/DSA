@@ -147,3 +147,20 @@ class Solution:
                 if arr[i][j] == None:
                     arr[i][j] = 0
         return arr
+
+# Rotate a matrix by 90 degrees clockwise
+class Solution:
+    def rotate(self, arr) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        row = len(arr)
+        n = row
+        col = len(arr[0])
+        temp = [[0]*col for _ in range(row)]
+        for i in range(row):
+            for j in range(col):
+                temp[j][n-1-i] = arr[i][j]
+        for i in range(row):
+            for j in range(col):
+                arr[i][j] = temp[i][j]
