@@ -85,3 +85,41 @@ class Solution:
             return upper
         upper = upper_bound(nums,n , x)
         return [lower , upper - 1]
+
+#count occurrences of an element in sorted array
+class Solution:
+    def countOccurrences(self, nums, x):
+        n = len(nums)
+        def lower_bound(arr,n , x):
+            low = 0 
+            high = n-1 
+            lower = -1
+            while(low <= high):
+                mid = (low+high)//2
+                if arr[mid] >= x:
+                    lower = mid
+                    high = mid - 1
+                else:
+                    low = mid + 1
+            if lower == -1:
+                return n
+            return lower
+        lower = lower_bound(nums, n, x)
+        if (lower == n or nums[lower] != x):
+            return -1
+        def upper_bound(arr,n, x):
+            low = 0
+            high = n-1 
+            upper = -1
+            while(low <= high):
+                mid = (low+high)//2
+                if arr[mid] > x:
+                    upper = mid
+                    high = mid - 1
+                else:
+                    low = mid + 1
+            if upper == -1:
+                return n
+            return upper
+        upper = upper_bound(nums,n , x)
+        return upper - lower
