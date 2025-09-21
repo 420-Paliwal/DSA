@@ -86,11 +86,12 @@ class Solution:
         upper = upper_bound(nums,n , x)
         return [lower , upper - 1]
 
-#count occurrences of an element in sorted array
+#count occurrences of an element in sorted array1
 class Solution:
     def countOccurrences(self, nums, x):
         n = len(nums)
         def lower_bound(arr,n , x):
+            
             low = 0 
             high = n-1 
             lower = -1
