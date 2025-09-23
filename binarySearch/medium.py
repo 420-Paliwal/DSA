@@ -17,7 +17,7 @@ class Solution:
                     low = mid + 1 
                 else:
                     high = mid - 1
-        return -1 
+        return -1
 
 #search in rotated sorted array with duplicates
 class Solution(object):
